@@ -1,3 +1,5 @@
+const {FAB} = require('react-native-paper');
+
 const React = require('react');
 const { Component } = React;
 const { ViewPropTypes } = ReactNative = require('react-native');
@@ -390,6 +392,15 @@ const ScrollableTabView = createReactClass({
       {this.props.tabBarPosition === 'top' && this.renderTabBar(tabBarProps)}
       {this.renderScrollableContent()}
       {(this.props.tabBarPosition === 'bottom' || overlayTabs) && this.renderTabBar(tabBarProps)}
+
+      {this.props.fab && (
+                <FAB
+                    style={styles.fab}
+                    icon="add"
+                    onPress={this.props.onPressFab}
+                />
+            )
+        }
     </View>;
   },
 });
@@ -402,5 +413,11 @@ const styles = StyleSheet.create({
   },
   scrollableContentAndroid: {
     flex: 1,
+  },
+  fab: {
+    position: 'absolute',
+    margin: 16,
+    right: 0,
+    bottom: 32,
   },
 });
