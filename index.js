@@ -396,7 +396,7 @@ const ScrollableTabView = createReactClass({
       {this.props.fab && (
                 <FAB
                     style={styles.fab}
-                    icon="add"
+                    icon={this.props.fabIcon}
                     onPress={this.props.onPressFab}
                 />
             )
