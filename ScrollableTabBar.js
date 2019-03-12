@@ -21,8 +21,8 @@ const ScrollableTabBar = createReactClass({
     activeTab: PropTypes.number,
     tabs: PropTypes.array,
     backgroundColor: PropTypes.string,
-    activeTextColor: PropTypes.string,
-    inactiveTextColor: PropTypes.string,
+    activeTextStyle: PropTypes.object,
+    inactiveTextStyle: PropTypes.object,
     scrollOffset: PropTypes.number,
     style: ViewPropTypes.style,
     tabStyle: ViewPropTypes.style,
@@ -37,7 +37,6 @@ const ScrollableTabBar = createReactClass({
     return {
       scrollOffset: 52,
       activeTextColor: 'navy',
-      inactiveTextColor: 'black',
       backgroundColor: null,
       style: {},
       tabStyle: {},

@@ -368,7 +368,7 @@ const ScrollableTabView = createReactClass({
       tabBarProps.activeTextStyle = this.props.tabBarActiveTextStyle;
     }
     if (this.props.tabBarInactiveTextStyle) {
-      tabBarProps.inactiveTextColor = this.props.tabBarInactiveTextStyle;
+      tabBarProps.inactiveTextStyle = this.props.tabBarInactiveTextStyle;
     }
     if (this.props.tabBarUnderlineStyle) {
       tabBarProps.underlineStyle = this.props.tabBarUnderlineStyle;
