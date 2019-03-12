@@ -1,7 +1,6 @@
 const {FAB} = require('react-native-paper');
 
 const React = require('react');
-const { Component } = React;
 const { ViewPropTypes } = ReactNative = require('react-native');
 const createReactClass = require('create-react-class');
 const PropTypes = require('prop-types');
@@ -9,11 +8,9 @@ const {
   Dimensions,
   View,
   Animated,
-  ScrollView,
   Platform,
   StyleSheet,
   ViewPagerAndroid,
-  InteractionManager,
 } = ReactNative;
 const TimerMixin = require('react-timer-mixin');
 
@@ -334,7 +331,7 @@ const ScrollableTabView = createReactClass({
     if (!width || width <= 0 || Math.round(width) === Math.round(this.state.containerWidth)) {
       return;
     }
-    
+
     if (Platform.OS === 'ios') {
       const containerWidthAnimatedValue = new Animated.Value(width);
       // Need to call __makeNative manually to avoid a native animated bug. See
@@ -367,14 +364,11 @@ const ScrollableTabView = createReactClass({
     if (this.props.tabBarBackgroundColor) {
       tabBarProps.backgroundColor = this.props.tabBarBackgroundColor;
     }
-    if (this.props.tabBarActiveTextColor) {
-      tabBarProps.activeTextColor = this.props.tabBarActiveTextColor;
+    if (this.props.tabBarActiveTextStyle) {
+      tabBarProps.activeTextStyle = this.props.tabBarActiveTextStyle;
     }
-    if (this.props.tabBarInactiveTextColor) {
-      tabBarProps.inactiveTextColor = this.props.tabBarInactiveTextColor;
-    }
-    if (this.props.tabBarTextStyle) {
-      tabBarProps.textStyle = this.props.tabBarTextStyle;
+    if (this.props.tabBarInactiveTextStyle) {
+      tabBarProps.inactiveTextColor = this.props.tabBarInactiveTextStyle;
     }
     if (this.props.tabBarUnderlineStyle) {
       tabBarProps.underlineStyle = this.props.tabBarUnderlineStyle;
